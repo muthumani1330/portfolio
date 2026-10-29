@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#e8eaed"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a73e8"/>
+      <stop offset="100%" stop-color="#4285f4"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34a853"/>
+      <stop offset="100%" stop-color="#4285f4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Subtle circular background surface -->
+  <rect width="400" height="400" rx="48" fill="url(#bgGrad)" stroke="#dadce0" stroke-width="2"/>
+  
+  <!-- Decorative tech rings -->
+  <circle cx="200" cy="180" r="110" fill="none" stroke="#e8f0fe" stroke-width="4" stroke-dasharray="8 6"/>
+  <circle cx="200" cy="180" r="85" fill="#ffffff" stroke="#dadce0" stroke-width="2" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.06))"/>
+  
+  <!-- Monogram Initials -->
+  <text x="200" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="url(#primaryGrad)" text-anchor="middle" dominant-baseline="middle">MP</text>
+  
+  <!-- Bottom info pill -->
+  <rect x="75" y="315" width="250" height="42" rx="21" fill="#ffffff" stroke="#dadce0" stroke-width="1.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.04))"/>
+  <circle cx="100" cy="336" r="5" fill="#34a853"/>
+  <text x="116" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#3c4043">Muthumani P • Web Dev &amp; AI</text>
+</svg>

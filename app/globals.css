@@ -1,0 +1,441 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --default-font: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --heading-font: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
+    --nav-font: var(--font-inter), system-ui, sans-serif;
+    --mono-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    /* Chrome-Inspired Midnight Blue + Violet + Cyan Theme */
+    --background-color: #0B1020;
+    --bg-page: #0B1020;
+    --dashboard-bg: #10182B;
+    --surface-color: #151F35;
+    --bg-card: #151F35;
+    --bg-subtle: #10182B;
+    
+    --bg-accent-tint: rgba(66, 133, 244, 0.12);
+    --bg-violet-tint: rgba(139, 92, 246, 0.12);
+    --bg-cyan-tint: rgba(34, 211, 238, 0.12);
+
+    --default-color: #AAB6CC;
+    --text-primary: #F8FAFC;
+    --text-secondary: #AAB6CC;
+    --heading-color: #F8FAFC;
+
+    --accent-color: #4285F4;
+    --accent-hover: #3367D6;
+    --secondary-accent: #8B5CF6;
+    --cyan-highlight: #22D3EE;
+    --contrast-color: #F8FAFC;
+    --border-color: #27344D;
+    --border-focus: #4285F4;
+
+    --sidebar-bg: #0B1020;
+    --sidebar-nav-color: #AAB6CC;
+    --sidebar-nav-hover: #F8FAFC;
+  }
+
+  .dark {
+    --background-color: #0B1020;
+    --bg-page: #0B1020;
+    --dashboard-bg: #10182B;
+    --surface-color: #151F35;
+    --bg-card: #151F35;
+    --bg-subtle: #10182B;
+
+    --bg-accent-tint: rgba(66, 133, 244, 0.14);
+    --bg-violet-tint: rgba(139, 92, 246, 0.14);
+    --bg-cyan-tint: rgba(34, 211, 238, 0.14);
+
+    --default-color: #AAB6CC;
+    --text-primary: #F8FAFC;
+    --text-secondary: #AAB6CC;
+    --heading-color: #F8FAFC;
+
+    --accent-color: #4285F4;
+    --accent-hover: #3367D6;
+    --secondary-accent: #8B5CF6;
+    --cyan-highlight: #22D3EE;
+    --contrast-color: #F8FAFC;
+    --border-color: #27344D;
+    --border-focus: #4285F4;
+
+    --sidebar-bg: #0B1020;
+    --sidebar-nav-color: #AAB6CC;
+    --sidebar-nav-hover: #F8FAFC;
+  }
+
+  * {
+    border-color: var(--border-color);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+    background-color: #0B1020;
+    color: #F8FAFC;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--default-color);
+    font-family: var(--default-font);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    letter-spacing: -0.011em;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: rgba(66, 133, 244, 0.35);
+    color: #F8FAFC;
+  }
+}
+
+/* ==========================================================
+   Chrome-Inspired Midnight Blue & Galaxy Card Styles
+========================================================== */
+
+/* Hero Section Base */
+#home {
+  background-color: #10182B;
+}
+
+/* Primary Enterprise Button */
+.btn-enterprise-work {
+  background: linear-gradient(135deg, #4285F4 0%, #3367D6 100%);
+  color: #F8FAFC;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(66, 133, 244, 0.35);
+}
+
+.btn-enterprise-work:hover {
+  background: linear-gradient(135deg, #5392F8 0%, #4285F4 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.45);
+}
+
+/* Section Title Accents */
+.section-title {
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  position: relative;
+  color: #F8FAFC;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #4285F4, #8B5CF6);
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.section-title p {
+  color: #AAB6CC;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Resume Item Node Marker */
+.resume-item {
+  padding: 0 0 24px 22px;
+  margin-top: -2px;
+  border-left: 2px solid #27344D;
+  position: relative;
+}
+
+.resume-item::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  left: -8px;
+  top: 2px;
+  background: #10182B;
+  border: 2px solid #4285F4;
+  box-shadow: 0 0 8px rgba(66, 133, 244, 0.5);
+}
+
+/* Chrome/Midnight Cards */
+.chrome-card {
+  background-color: #151F35;
+  border: 1px solid #27344D;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.chrome-card:hover {
+  border-color: rgba(66, 133, 244, 0.4);
+  box-shadow: 0 12px 35px -8px rgba(66, 133, 244, 0.12);
+}
+
+/* ==========================================================
+   INTERACTIVE NEON PERIMETER BORDER & GESTURE HIGHLIGHT EFFECT
+   Continuous traveling beam: Cyan -> Electric Blue -> Violet
+========================================================== */
+
+@property --neon-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes neonBorderRotate {
+  0% {
+    --neon-angle: 0deg;
+  }
+  100% {
+    --neon-angle: 360deg;
+  }
+}
+
+/* Base Neon Border Targets */
+.neon-border-card,
+.neon-border-btn,
+.neon-border-nav,
+.neon-border-panel {
+  position: relative;
+  isolation: isolate;
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+/* Crisp Traveling Perimeter Line */
+.neon-border-card::before,
+.neon-border-btn::before,
+.neon-border-nav::before,
+.neon-border-panel::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--neon-angle, 0deg),
+    transparent 0deg,
+    transparent 160deg,
+    rgba(66, 133, 244, 0.25) 210deg,
+    #4285F4 270deg,
+    #22D3EE 320deg,
+    #8B5CF6 350deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 25;
+}
+
+/* Ambient Diffused Outer Glow */
+.neon-border-card::after,
+.neon-border-btn::after,
+.neon-border-nav::after,
+.neon-border-panel::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--neon-angle, 0deg),
+    transparent 0deg,
+    transparent 180deg,
+    rgba(66, 133, 244, 0.3) 240deg,
+    #4285F4 290deg,
+    #22D3EE 330deg,
+    #8B5CF6 355deg,
+    transparent 360deg
+  );
+  filter: blur(8px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+/* Hover, Focus-Visible, and Programmatic Gesture States */
+.neon-border-card:hover,
+.neon-border-card:focus-visible,
+.neon-border-card.neon-active {
+  box-shadow: 0 0 25px -4px rgba(66, 133, 244, 0.35), 0 0 45px -8px rgba(139, 92, 246, 0.2);
+  border-color: rgba(66, 133, 244, 0.4) !important;
+}
+.neon-border-card:hover::before,
+.neon-border-card:focus-visible::before,
+.neon-border-card.neon-active::before {
+  opacity: 1;
+  animation: neonBorderRotate 3.2s linear infinite;
+}
+.neon-border-card:hover::after,
+.neon-border-card:focus-visible::after,
+.neon-border-card.neon-active::after {
+  opacity: 0.6;
+  animation: neonBorderRotate 3.2s linear infinite;
+}
+
+/* Interactive Buttons */
+.neon-border-btn:hover,
+.neon-border-btn:focus-visible,
+.neon-border-btn.neon-active {
+  box-shadow: 0 0 20px rgba(66, 133, 244, 0.4), 0 0 35px rgba(34, 211, 238, 0.25);
+}
+.neon-border-btn:hover::before,
+.neon-border-btn:focus-visible::before,
+.neon-border-btn.neon-active::before {
+  opacity: 1;
+  animation: neonBorderRotate 2.2s linear infinite;
+}
+.neon-border-btn:hover::after,
+.neon-border-btn:focus-visible::after,
+.neon-border-btn.neon-active::after {
+  opacity: 0.7;
+  animation: neonBorderRotate 2.2s linear infinite;
+}
+
+/* Navigation Menu Items */
+.neon-border-nav:hover,
+.neon-border-nav:focus-visible,
+.neon-border-nav.neon-active {
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.3);
+}
+.neon-border-nav:hover::before,
+.neon-border-nav:focus-visible::before,
+.neon-border-nav.neon-active::before {
+  opacity: 1;
+  animation: neonBorderRotate 2.4s linear infinite;
+}
+.neon-border-nav:hover::after,
+.neon-border-nav:focus-visible::after,
+.neon-border-nav.neon-active::after {
+  opacity: 0.55;
+  animation: neonBorderRotate 2.4s linear infinite;
+}
+
+/* Large Featured Panels */
+.neon-border-panel::before {
+  padding: 2px;
+}
+.neon-border-panel:hover,
+.neon-border-panel:focus-visible,
+.neon-border-panel.neon-active {
+  box-shadow: 0 15px 45px -10px rgba(66, 133, 244, 0.25), 0 0 50px -10px rgba(139, 92, 246, 0.2);
+  border-color: rgba(66, 133, 244, 0.5) !important;
+}
+.neon-border-panel:hover::before,
+.neon-border-panel:focus-visible::before,
+.neon-border-panel.neon-active::before {
+  opacity: 1;
+  animation: neonBorderRotate 4.5s linear infinite;
+}
+.neon-border-panel:hover::after,
+.neon-border-panel:focus-visible::after,
+.neon-border-panel.neon-active::after {
+  opacity: 0.5;
+  animation: neonBorderRotate 4.5s linear infinite;
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .neon-border-card::before,
+  .neon-border-btn::before,
+  .neon-border-nav::before,
+  .neon-border-panel::before,
+  .neon-border-card::after,
+  .neon-border-btn::after,
+  .neon-border-nav::after,
+  .neon-border-panel::after {
+    animation: none !important;
+  }
+}
+
+/* Chrome Browser Mockup Tabs */
+.chrome-tab-bar {
+  background: #10182B;
+  border-bottom: 1px solid #27344D;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chrome-omnibox {
+  background: #151F35;
+  border: 1px solid #27344D;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-family: monospace;
+  color: #AAB6CC;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1020;
+}
+::-webkit-scrollbar-thumb {
+  background: #27344D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4285F4;
+}
+
+/* Smooth Entrance for Hero Name */
+@keyframes fadeInUpName {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUpName 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
